@@ -15,14 +15,12 @@ struct Node* createNode(int value) {
     return newNode;
 }
 
-// Insert at beginning
 void insertAtBeginning(int value) {
     struct Node* newNode = createNode(value);
     newNode->next = head;
     head = newNode;
 }
 
-// Insert at end
 void insertAtEnd(int value) {
     struct Node* newNode = createNode(value);
     if (head == NULL) {
@@ -37,13 +35,8 @@ void insertAtEnd(int value) {
     temp->next = newNode;
 }
 
-// Insert at specific position (1-based indexing)
 void insertAtPosition(int value, int position) {
-    if (position < 1) {
-        printf("Position must be >= 1\n");
-        return;
-    }
-
+    
     if (position == 1) {
         insertAtBeginning(value);
         return;
@@ -65,7 +58,7 @@ void insertAtPosition(int value, int position) {
     temp->next = newNode;
 }
 
-// Delete from beginning
+
 void deleteFromBeginning() {
     if (head == NULL) {
         printf("List is empty\n");
@@ -77,7 +70,7 @@ void deleteFromBeginning() {
     free(temp);
 }
 
-// Delete from end
+
 void deleteFromEnd() {
     if (head == NULL) {
         printf("List is empty\n");
@@ -98,7 +91,7 @@ void deleteFromEnd() {
     temp->next = NULL;
 }
 
-// Delete from specific position (1-based indexing)
+
 void deleteFromPosition(int position) {
     if (position < 1 || head == NULL) {
         printf("Invalid position or list is empty\n");
@@ -124,7 +117,7 @@ void deleteFromPosition(int position) {
     free(nodeToDelete);
 }
 
-// Search for an element
+
 void search(int value) {
     struct Node* temp = head;
     int position = 1;
@@ -141,7 +134,7 @@ void search(int value) {
     printf("Element %d not found in the list\n", value);
 }
 
-// Display list
+
 void display() {
     if (head == NULL) {
         printf("List is empty\n");
@@ -157,7 +150,7 @@ void display() {
     printf("NULL\n");
 }
 
-// Menu-driven interface
+
 int main() {
     int choice, value, position;
 
