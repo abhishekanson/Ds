@@ -32,7 +32,7 @@ void insert(int value) {
 
 void delete() {
     if (head == NULL) {
-        printf("List is empty\n");
+        printf("Queue underflow\n");
         return;
     }
 

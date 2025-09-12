@@ -23,7 +23,7 @@ void push(int value) {
 
 void pop() {
     if (head == NULL) {
-        printf("List is empty\n");
+        printf("Stack Underflow\n");
         return;
     }
 
